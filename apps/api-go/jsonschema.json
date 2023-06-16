@@ -1,10 +1,1 @@
-{
-    "title": "Test Schema",
-    "type": "object",
-    "properties": {
-        "value": {
-            "type": "integer"
-        }
-    },
-    "required": ["value"]
-}
+{"type":"object","properties":{"title":{"minLength":1,"type":"string"},"year":{"minimum":1000,"type":"number"}},"required":["title","year"]}

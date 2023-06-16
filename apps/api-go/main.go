@@ -41,7 +41,7 @@ func setupRouter() *gin.Engine {
     var item Item
     // Check schema
     if schema.BindJSON(ctx, reqSchema, &item) == nil {
-      ctx.BindJSON(&item)
+      ctx.ShouldBindJSON(&item)
       items.AddItem(item)
       ctx.JSON(200, gin.H{ "message": "Success add item"})
     }
