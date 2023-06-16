@@ -1,12 +1,18 @@
 package main
 
-import "fmt"
+import (
+  "github.com/gin-gonic/gin";
+)
 
-func Hello(name string) string {
-	result := "Hello " + name
-	return result
+func setupRouter() *gin.Engine {
+	r := gin.Default()
+	r.GET("/ping", func(c *gin.Context) {
+		c.String(200, "pong")
+	})
+	return r
 }
 
 func main() {
-	fmt.Println(Hello("api-go"))
+	r := setupRouter()
+	r.Run(":8080")
 }

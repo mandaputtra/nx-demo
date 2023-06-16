@@ -22,6 +22,9 @@
     },
     "lint": {
       "executor": "@nx-go/nx-go:lint"
+    },
+    "get": {
+      "command": "go get -u"
     }
   },
   "tags": []
