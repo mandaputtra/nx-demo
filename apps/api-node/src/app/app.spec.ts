@@ -9,12 +9,26 @@ describe('GET /', () => {
     server.register(app);
   });
 
-  it('should respond with a message', async () => {
-    const response = await server.inject({
+  it('should be able to add items', async () => {
+    const rAddItems = await server.inject({
+      method: 'POST',
+      url: '/',
+      body: {
+        title: 'Ayogaki del Tore',
+        year: 1992,
+      },
+    });
+
+    expect(rAddItems.json()).toEqual({ message: 'Success add item' });
+
+    const rReadItems = await server.inject({
       method: 'GET',
       url: '/',
     });
 
-    expect(response.json()).toEqual({ message: 'Hello API' });
+    expect(rReadItems.json()[0]).toMatchObject({
+      title: 'Ayogaki del Tore',
+      year: 1992,
+    });
   });
 });

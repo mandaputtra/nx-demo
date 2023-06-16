@@ -1,8 +1,8 @@
 import { Static, Type } from '@sinclair/typebox';
 
-export const AddItemSchema = Type.Object({
-  title: Type.String({ minLength: 10 }),
+export const ItemSchema = Type.Object({
+  title: Type.String({ minLength: 1 }),
   year: Type.Number({ minimum: 1000 }),
 });
 
-export type AddItemType = Static<typeof AddItemSchema>;
+export type ItemType = Static<typeof ItemSchema>;
