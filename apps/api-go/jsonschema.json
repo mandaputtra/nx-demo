@@ -1,0 +1,10 @@
+{
+    "title": "Test Schema",
+    "type": "object",
+    "properties": {
+        "value": {
+            "type": "integer"
+        }
+    },
+    "required": ["value"]
+}
