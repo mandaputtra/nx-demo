@@ -1,1 +1,7 @@
-/* Your styles goes here. */
+.wrapper {
+  text-align: center;
+}
+
+button {
+  font-size: 18px;
+}
